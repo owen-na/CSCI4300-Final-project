@@ -1,0 +1,8 @@
+.parent {
+    width: 60vw; /* i want it at 60% */
+    height: 40vh; /* i want it at 40% */  
+    position: relative;
+    background-color: azure;
+    margin: auto;
+    border: 2px solid black;
+}
