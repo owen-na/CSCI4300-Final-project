@@ -1,22 +1,26 @@
 .mainParent {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    margin: auto;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin: auto;
 }
 
 .horizontalScroll {
-    margin-top: 5%;
-    /* overflow-x: hidden; */
-    /* white-space: nowrap; */
+  margin-top: 5%;
+  /* overflow-x: hidden; */
+  /* white-space: nowrap; */
 }
 
-.backArrow {
-    rotate: 180deg;
+.barrow {
+  rotate: 180deg;
+}
+
+button img {
+  width: 10em;
 }

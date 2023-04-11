@@ -8,7 +8,7 @@ export default function SignIn() {
           <p> &lt; back</p>
         </button>
       </div>
-      <div className="signUnForm">
+      <div className="signInForm">
         <form>
           <h1>Login</h1>
           <label for="email">email</label>
