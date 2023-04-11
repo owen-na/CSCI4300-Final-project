@@ -8,11 +8,12 @@ import arrow from "./assets/arrow.svg";
 function App() {
   return (
     <>
-        <Header />
       <Routes>
         <Route path="/Pages/Login" element={<Login />} />
         <Route path="/Pages/SignIn" element={<SignIn />} />
         <Route path="/" element={
+          <>
+          <Header />
       <div className="mainParent">
         <button type="button">
           <img src={arrow} alt="Backarrow" className="barrow" />
@@ -24,6 +25,7 @@ function App() {
           <img src={arrow} alt="arrow" className="farrow" />
         </button>
       </div>
+      </>
         } />
     </Routes>
     </>

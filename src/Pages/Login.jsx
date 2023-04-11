@@ -1,10 +1,14 @@
+import { Link } from "react-router-dom";
+
 export default function Login() {
   return (
     <>
       <div>
-        <button>
-          <p> &lt; back</p>
-        </button>
+        <Link to="/">
+          <button>
+            <p> &lt; back</p>
+          </button>
+        </Link>
       </div>
       <div className="loginForm">
         <form>
