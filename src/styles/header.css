@@ -7,7 +7,7 @@
     align-items: center;
     justify-content: space-around;
     justify-content: flex-end;
-    border-bottom: 1px solid red;
+    border-bottom: 1px solid black;
     position: sticky;
 }
 
@@ -15,6 +15,9 @@ a {
     text-decoration: none;
     outline: none;
     user-select: none;
+    color: black;
+    font-size: 1.4em;
+    font-weight: 700;
 }
 
 .links {
@@ -25,12 +28,6 @@ a {
     text-align: center;
     justify-content: space-around;
     align-items: center;
-}
-
-.login-button {
-    background-color: aliceblue;
-    padding: 1% 1.2%;
-    margin: 0;
 }
 
 .spacer {

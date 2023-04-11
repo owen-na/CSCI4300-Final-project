@@ -8,13 +8,13 @@ function App() {
     <Header />
     <div className="mainParent">
       <button type='button'>
-        <img src="../public/assets/724927.png" alt="arrow" className="backArrow"/>
+        <img src="./public/assets/724927.png" alt="Backarrow" className="backArrow"/>
       </button>
       <div className="horizontalScroll">
         <Card />
       </div>
       <button type='button'>
-        <img src="../public/assets/724927.png" alt="arrow" />
+        <img src="./public/assets/724927.png" alt="arrow" />
       </button>
     </div>
     </>

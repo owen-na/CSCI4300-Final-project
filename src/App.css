@@ -13,8 +13,8 @@ button {
 
 .horizontalScroll {
     margin-top: 5%;
-    overflow-x: hidden;
-    white-space: nowrap;
+    /* overflow-x: hidden; */
+    /* white-space: nowrap; */
 }
 
 .backArrow {

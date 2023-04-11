@@ -1,22 +1,41 @@
 .parent {
     width: 50vw; /* i want it at 50% */
     height: 40vh; /* i want it at 40% */  
-    background-color: azure;
+    background-color: white;
     border: 2px solid black;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 }
 
+h2 {
+    margin-top: 0;
+}
+
 .imageHolder {
-    width: 20%;
-    height: 40%;
+    width: 35%;
+    height: 80%;
+    right: 12.5%;
+    position: relative;
+}
+
+.image {
+    width: 90%;
+    height: 80%;
     border: 1px solid black;
 }
 
 .stats {
+    position: relative;
+    right: 20%;
     display: flex;
-    height: 40%;
+    height: 70%;
     flex-direction: column;
-    justify-content: space-between;
+}
+
+.stats p {
+    flex-grow: 1;
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.2em;
 }

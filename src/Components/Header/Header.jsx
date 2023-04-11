@@ -1,14 +1,12 @@
-import "../../styles/header.css"
+import "../../styles/header.css";
 
 export default function Header() {
-    return (
-        <div className="header">
-            <div className="links">
-                <a href="../App.js">MainPage</a>
-                <a href="./Header/Header.jsx">Sign Up</a>
-                <p className="spacer"> // </p>
-                <button className="login-button">Login</button>
-            </div>
-        </div>
-    )
+  return (
+    <div className="header">
+      <div className="links">
+        <a href="../Pages/SignIn.jsx">Sign Up</a>
+        <a href="../Pages/Login.jsx">Login</a>
+      </div>
+    </div>
+  );
 }
