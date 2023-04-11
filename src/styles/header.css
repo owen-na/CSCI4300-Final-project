@@ -1,0 +1,38 @@
+.header {
+    width: 100vw;
+    height: 8vh;
+    margin-bottom: 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    justify-content: flex-end;
+    border-bottom: 1px solid red;
+    position: sticky;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+    user-select: none;
+}
+
+.links {
+    display: flex;
+    position: relative;
+    width: 20%;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.login-button {
+    background-color: aliceblue;
+    padding: 1% 1.2%;
+    margin: 0;
+}
+
+.spacer {
+    size: 1em;
+}

@@ -1,8 +1,22 @@
 .parent {
-    width: 60vw; /* i want it at 60% */
+    width: 50vw; /* i want it at 50% */
     height: 40vh; /* i want it at 40% */  
-    position: relative;
     background-color: azure;
-    margin: auto;
     border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.imageHolder {
+    width: 20%;
+    height: 40%;
+    border: 1px solid black;
+}
+
+.stats {
+    display: flex;
+    height: 40%;
+    flex-direction: column;
+    justify-content: space-between;
 }
