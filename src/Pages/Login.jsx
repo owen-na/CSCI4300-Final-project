@@ -20,7 +20,7 @@ export default function Login() {
           <button type="submit">login</button>
         </form>
         <p>
-          need an account? <a href="./SignIn.jsx">sign up</a>
+          need an account? <Link to="SignIn">Sign Up</Link>
         </p>
       </div>
     </>

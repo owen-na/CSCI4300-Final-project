@@ -29,7 +29,7 @@
     display: block;
     width: 100%;
     padding: 10px;
-    background-color: #4CAF50;
+    background-color: #656A67;
     color: white;
     border: none;
     border-radius: 3px;
@@ -42,5 +42,5 @@
   }
   
   .loginForm a {
-    color: #4CAF50;
+    color: #000000;
   }
