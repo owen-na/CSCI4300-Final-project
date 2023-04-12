@@ -1,4 +1,4 @@
-import "../styles/login.css";
+import "../styles/signIn.css";
 import { Link } from "react-router-dom";
 
 export default function SignIn() {
@@ -13,7 +13,7 @@ export default function SignIn() {
       </div>
       <div className="signInForm">
         <form>
-          <h1>Login</h1>
+          <h1>Sign Up</h1>
           <label for="email">email</label>
           <input type="email" name="email" required></input>
           <label for="password">password</label>
@@ -21,7 +21,7 @@ export default function SignIn() {
           <button type="submit">sign up</button>
         </form>
         <p>
-          already a user? <a href="./SignIn.jsx">login</a>
+          already a user? <Link to="/Pages/Login">Login</Link>
         </p>
       </div>
     </>

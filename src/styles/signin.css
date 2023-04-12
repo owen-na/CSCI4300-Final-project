@@ -1,0 +1,46 @@
+.signInForm {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+  }
+  
+  .signInForm h1 {
+    margin-top: 0;
+  }
+  
+  .signInForm label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .signInForm input[type="email"],
+  .signInForm input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .signInForm button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #656A67;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .signInForm p {
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .signInForm a {
+    color: #000000;
+  }

@@ -1,3 +1,4 @@
+import "../styles/login.css";
 import { Link } from "react-router-dom";
 
 export default function Login() {
@@ -20,7 +21,7 @@ export default function Login() {
           <button type="submit">login</button>
         </form>
         <p>
-          need an account? <Link to="SignIn">Sign Up</Link>
+          need an account? <Link to="/Pages/SignIn">Sign Up</Link>
         </p>
       </div>
     </>
