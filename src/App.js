@@ -23,7 +23,7 @@ export default function App() {
           <img src={arrow} alt="Backarrow" className="barrow" />
         </button>
         <div className="horizontalScroll">
-          <Card />
+        <Card loggedIn={loggedIn} />
         </div>
         <button type="button">
           <img src={arrow} alt="arrow" className="farrow" />
