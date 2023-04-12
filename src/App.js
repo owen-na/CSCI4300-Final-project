@@ -5,7 +5,11 @@ import Login from './Pages/Login';
 import SignIn from './Pages/SignIn';
 import "./App.css";
 import arrow from "./assets/arrow.svg";
-function App() {
+import React, { useState } from 'react';
+
+export default function App() {
+  const [loggedIn, setLoggedIn] = useState(false);
+
   return (
     <>
       <Routes>
@@ -31,5 +35,3 @@ function App() {
     </>
   );
 }
-
-export default App;

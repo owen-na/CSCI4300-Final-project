@@ -1,6 +1,9 @@
 import "../../styles/card.css";
+import React, { useState } from 'react';
 
-export default function Card() {
+export default function Card(props) {
+  const [loggedIn, setLoggedIn] = useState(false); 
+
   return (
     <div className="parent">
       <div className="imageHolder">
@@ -14,6 +17,9 @@ export default function Card() {
         <p>placeHolder</p>
         <p>placeHolder</p>
         <p>placeHolder</p>
+        {loggedIn && (
+          <button className="editButton">Edit</button>
+        )}
       </div>
     </div>
   );

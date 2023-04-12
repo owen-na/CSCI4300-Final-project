@@ -39,3 +39,13 @@ h2 {
     font-weight: 600;
     font-size: 1.2em;
 }
+
+.editButton {
+    background-color: transparent;
+    color: black;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+  }
