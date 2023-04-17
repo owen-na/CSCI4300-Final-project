@@ -1,7 +1,22 @@
 import "../styles/login.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import Card from "../Components/Card/Card";
 
-export default function Login() {
+export default function Login({ setLoggedIn }) {
+  const navigate = useNavigate();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setIsLoggedIn(true);
+    setLoggedIn(true);
+  };
+
+  if (isLoggedIn) {
+    return <Card isLoggedIn={true} />;
+  }
+
   return (
     <>
       <div>
@@ -12,21 +27,28 @@ export default function Login() {
         </Link>
       </div>
       <div className="loginForm">
-        <form>
-          <h1>Login</h1>
-          <label for="email">email</label>
-          <input type="email" name="email" required></input>
-          <label for="password">password</label>
-          <input type="password" name="password" requried></input>
-          <button type="submit">login</button>
+        <h1>Login</h1>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+          ></input>
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            placeholder="Enter your password"
+            required
+          ></input>
+          <button type="submit">Login</button>
         </form>
         <p>
-          need an account? <Link to="/Pages/SignIn">Sign Up</Link>
+          Need an account? <Link to="/Pages/SignIn">Sign Up</Link>
         </p>
       </div>
     </>
   );
 }
-
-// need onSession checker
-// need to make sure form connects to db later

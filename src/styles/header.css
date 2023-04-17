@@ -1,3 +1,4 @@
+/* Default styles */
 .header {
     width: 100vw;
     height: 8vh;
@@ -9,18 +10,37 @@
     justify-content: flex-end;
     border-bottom: 1px solid black;
     position: sticky;
-}
-
-a {
+  }
+  
+  a {
     text-decoration: none;
     outline: none;
     user-select: none;
     color: black;
     font-size: 1.4em;
     font-weight: 700;
-}
+  }
 
-.links {
+  .logo {
+    width: 20%;
+    height: 60%;
+    margin-right: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* align the logo to the very left */
+    padding-left: 20px; /* add some padding to avoid the logo covering the border */
+    box-sizing: border-box; /* include padding in the width of the element */
+  }
+  
+  .logo img {
+    width: 70%;
+    height: 600%;
+    object-fit: contain;
+  }
+  
+  .links {
     display: flex;
     position: relative;
     width: 20%;
@@ -28,8 +48,35 @@ a {
     text-align: center;
     justify-content: space-around;
     align-items: center;
-}
-
-.spacer {
+  }
+  
+  .spacer {
     size: 1em;
-}
+  }
+  
+  /* Media query for smaller screens */
+  @media screen and (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      height: auto;
+      padding: 20px 0;
+      justify-content: space-between; /* align sign up and log in links to the left */
+    }
+    
+    .links {
+      width: 100%;
+      margin-top: 10px;
+      flex-direction: row; /* change back to row for sign up and log in links */
+      justify-content: flex-start; /* align sign up and log in links to the left */
+    }
+    
+    .spacer {
+      display: none;
+    }
+    
+    .signup,
+    .login {
+      margin-right: auto; /* push sign up and log in links to the left */
+    }
+  }
+  

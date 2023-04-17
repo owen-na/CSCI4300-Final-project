@@ -11,13 +11,13 @@ export default function SignIn() {
           </button>
         </Link>
       </div>
-      <div className="signInForm">
+      <div className="loginForm signInForm">
         <form>
           <h1>Sign Up</h1>
-          <label for="email">email</label>
-          <input type="email" name="email" required></input>
-          <label for="password">password</label>
-          <input type="password" name="password" requried></input>
+          <label htmlFor="email">email</label>
+          <input type="email" name="email" required />
+          <label htmlFor="password">password</label>
+          <input type="password" name="password" required />
           <button type="submit">sign up</button>
         </form>
         <p>

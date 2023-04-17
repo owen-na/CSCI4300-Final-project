@@ -8,30 +8,30 @@ import arrow from "./assets/arrow.svg";
 import React, { useState } from 'react';
 
 export default function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [isloggedIn, setLoggedIn] = useState(false);
 
   return (
     <>
       <Routes>
-        <Route path="/Pages/Login" element={<Login />} />
+        <Route path="/Pages/Login" element={<Login setLoggedIn={setLoggedIn} />} />
         <Route path="/Pages/SignIn" element={<SignIn />} />
         <Route path="/" element={
           <>
-          <Header />
-      <div className="mainParent">
-        <button type="button">
-          <img src={arrow} alt="Backarrow" className="barrow" />
-        </button>
-        <div className="horizontalScroll">
-        <Card loggedIn={loggedIn} />
-        </div>
-        <button type="button">
-          <img src={arrow} alt="arrow" className="farrow" />
-        </button>
-      </div>
-      </>
+            <Header isloggedIn={isloggedIn} />
+            <div className="mainParent">
+              <button type="button">
+                <img src={arrow} alt="Backarrow" className="barrow" />
+              </button>
+              <div className="horizontalScroll">
+                <Card isloggedIn={isloggedIn} />
+              </div>
+              <button type="button">
+                <img src={arrow} alt="arrow" className="farrow" />
+              </button>
+            </div>
+          </>
         } />
-    </Routes>
+      </Routes>
     </>
   );
 }

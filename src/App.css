@@ -15,6 +15,7 @@ button {
   margin-top: 5%;
   /* overflow-x: hidden; */
   /* white-space: nowrap; */
+  width: 100%;
 }
 
 .barrow {
@@ -23,4 +24,20 @@ button {
 
 button img {
   width: 10em;
+}
+
+@media screen and (max-width: 768px) {
+  .mainParent {
+    flex-direction: column;
+  }
+
+  .horizontalScroll {
+    margin-top: 2%;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  button img {
+    width: 5em;
+  }
 }
