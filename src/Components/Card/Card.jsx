@@ -2,10 +2,10 @@ import "../../styles/card.css";
 import React, { useState, useEffect, useRef } from "react";
 
 export default function Card({ isLoggedIn }) {
-  const [editing, setEditing] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(null);
-  const fileInputRef = useRef(null);
-  const [imageUrl, setImageUrl] = useState(null);
+  const [editing, setEditing] = useState(false); // For edit
+  const [selectedImage, setSelectedImage] = useState(null); // For image
+  const fileInputRef = useRef(null); // For image, get file.
+  const [imageUrl, setImageUrl] = useState(null); // For image
 
   const handleEditClick = () => {
     if (isLoggedIn) {
@@ -13,18 +13,18 @@ export default function Card({ isLoggedIn }) {
     } else {
       alert("Please log in to edit the card.");
     }
-  };
+  }; // Handle the edit button.
 
   const handleAddClick = () => {
     fileInputRef.current.click();
-  };
+  }; // Handle the add button.
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
     const imageUrl = URL.createObjectURL(file);
     setSelectedImage(file);
     setImageUrl(imageUrl);
-  };
+  }; // Add button click => add image.
 
   const handleDeleteClick = () => {
     if (!imageUrl) {
@@ -33,11 +33,12 @@ export default function Card({ isLoggedIn }) {
     }
     setSelectedImage(null);
     setImageUrl(null);
-  };
+  }; // Handle the delete button. Click => delete image.
 
   const handleSaveClick = () => {
     setEditing(false);
-  };
+  }; /* Handle save button. 
+  (Need to change this to save image even if we reload page.) */
 
   return (
     <div className="parent">
