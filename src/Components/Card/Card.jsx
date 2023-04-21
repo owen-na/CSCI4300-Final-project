@@ -26,6 +26,15 @@ export default function Card({ isLoggedIn }) {
     setImageUrl(imageUrl);
   };
 
+  const handleDeleteClick = () => {
+    if (!imageUrl) {
+      alert("There is no image added to the card!");
+      return;
+    }
+    setSelectedImage(null);
+    setImageUrl(null);
+  };
+
   const handleSaveClick = () => {
     setEditing(false);
   };
@@ -70,7 +79,7 @@ export default function Card({ isLoggedIn }) {
               </button>
               <button
                 className="deleteBtn"
-                onClick={() => console.log("Delete")}
+                onClick={handleDeleteClick}
               >
                 Delete
               </button>
