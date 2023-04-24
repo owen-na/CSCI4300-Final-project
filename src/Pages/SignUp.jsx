@@ -12,6 +12,7 @@ export default function SignUp({ setLoggedIn }) {
     e.preventDefault();
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
+        alert("Thanks for registering!")
         console.log(userCredential);
       })
       .catch((error) => {
@@ -26,13 +27,13 @@ export default function SignUp({ setLoggedIn }) {
         <h1>Create an Account</h1>
         <input
           type="email"
-          placeholder="Enter your email"
+          placeholder="YourId@email.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         ></input>
         <input
           type="password"
-          placeholder="Enter your password"
+          placeholder="Password should be at least 6 characters"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         ></input>
