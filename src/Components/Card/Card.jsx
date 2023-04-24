@@ -9,7 +9,7 @@ export default function Card({ isLoggedIn }) {
 
   const sendData = async () => {
     try {
-      await fetch("http://localhost:8000/cardsdata", {
+      await fetch("/api/cardsdata", {
         method: "POST",
         headers: {
           Accept: "application/json",
