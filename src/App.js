@@ -5,37 +5,16 @@ import Login from "./Pages/Login";
 import SignUp from "./Pages/SignUp";
 import "./App.css";
 import arrow from "./assets/arrow.svg";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
 
-  function handleCallbackResponse(response) {
-    console.log("Encoded JWT ID token: " + response.credential);
-  }
-
-  useEffect(() => {
-    /* global google */;
-    google.accounts.id.initialize({
-      client_id: "320560195543-3aemf0f6p9o3e7ulctorgump9fu99797.apps.googleusercontent.com",
-      callback: handleCallbackResponse
-    });
-
-    google.accounts.id.renderButton(
-      document.getElementById("signInDiv"),
-      {theme: "outline", size: "large"}
-    );
-  }, []);
-
-  function handleLogout() {
-    // Log out of your app
+  const handleLogout = () => {
     setIsLoggedIn(false);
     navigate("/Pages/Login");
-  
-    // Log out of Google account
-    google.accounts.id.disableAutoSelect();
-  }
+  };
 
   return (
     <>
@@ -52,7 +31,7 @@ export default function App() {
                   <img src={arrow} alt="Backarrow" className="barrow" />
                 </button>
                 <div className="horizontalScroll">
-                <Card isLoggedIn={isLoggedIn} />
+                  <Card isLoggedIn={isLoggedIn} />
                 </div>
                 <button type="button">
                   <img src={arrow} alt="arrow" className="farrow" />
