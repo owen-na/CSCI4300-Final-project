@@ -1,5 +1,6 @@
 import "../../styles/card.css";
 import React, { useState, useEffect, useRef } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Card({ isLoggedIn }) {
   const [editing, setEditing] = useState(false); // For edit
@@ -8,6 +9,7 @@ export default function Card({ isLoggedIn }) {
   const [imageUrl, setImageUrl] = useState(null); // For image
   const [name, setName] = useState("Name: "); // For name
   const [description, setDescription] = useState("What's it about?"); // For description
+  const navigate = useNavigate();
 
   const sendData = async () => {
     try {
@@ -57,6 +59,7 @@ export default function Card({ isLoggedIn }) {
 
   const handleSaveClick = () => {
     setEditing(false);
+    navigate("/");
     sendData();
   }; /* Handle save button. 
   (Need to change this to save image even if we reload page.) */

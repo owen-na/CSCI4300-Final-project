@@ -4,13 +4,6 @@ import { Link } from "react-router-dom";
 export default function SignIn() {
   return (
     <>
-      <div>
-        <Link to="/">
-          <button>
-            <p> &lt; back</p>
-          </button>
-        </Link>
-      </div>
       <div className="loginForm signInForm">
         <form>
           <h1>Sign Up</h1>

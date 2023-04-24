@@ -2,6 +2,7 @@ import "../styles/login.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Card from "../Components/Card/Card";
+import Header from "../Components/Header/Header";
 
 export default function Login({ setLoggedIn }) {
   const navigate = useNavigate();
@@ -19,13 +20,6 @@ export default function Login({ setLoggedIn }) {
 
   return (
     <>
-      <div>
-        <Link to="/">
-          <button>
-            <p> &lt; back</p>
-          </button>
-        </Link>
-      </div>
       <div className="loginForm">
         <h1>Login</h1>
         <form onSubmit={handleSubmit}>
