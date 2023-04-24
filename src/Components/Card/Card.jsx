@@ -1,7 +1,6 @@
 import "../../styles/card.css";
 import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import AuthDetails from "../../Pages/AuthDetails";
 
 export default function Card({ isLoggedIn, handleLogout }) {
   const [editing, setEditing] = useState(false);
@@ -61,14 +60,9 @@ export default function Card({ isLoggedIn, handleLogout }) {
 
   const handleSaveClick = () => {
     setEditing(false);
-    navigate("/");
     sendData();
-    <AuthDetails handleLogout={handleLogoutClick} />
   };
 
-  const handleLogoutClick = () => {
-    handleLogout();
-  };
 
   const handleNameChange = (event) => {
     setName(event.target.value);
