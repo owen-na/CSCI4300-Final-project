@@ -30,8 +30,8 @@ export default function Header({ isLoggedIn, handleLogout }) {
         </div>
       ) : (
         <div className="links">
-          <Link to="../Pages/SignIn">Sign Up</Link>
-          <Link to="../Pages/Login">Login</Link>
+          <Link to="/Pages/SignUp">Sign Up</Link>
+          <Link to="/Pages/Login">Login</Link>
         </div>
       )}
     </div>

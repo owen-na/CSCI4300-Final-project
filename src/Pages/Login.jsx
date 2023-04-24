@@ -40,7 +40,7 @@ export default function Login({ setLoggedIn }) {
           <button type="submit">Login</button>
         </form>
         <p>
-          Need an account? <Link to="/Pages/SignIn">Sign Up</Link>
+          Need an account? <Link to="/Pages/SignUp">Sign Up</Link>
         </p>
       </div>
     </>
