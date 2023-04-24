@@ -2,6 +2,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
 import { auth } from "../../src/firebase";
 import { Link } from "react-router-dom";
+import "../styles/signUp.css";
 
 export default function SignUp({ setLoggedIn }) {
   const [email, setEmail] = useState("");

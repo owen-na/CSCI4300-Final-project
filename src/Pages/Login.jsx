@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { auth } from "../../src/firebase";
 import { Link, useNavigate } from "react-router-dom";
 import Card from "../Components/Card/Card";
-import Header from "../Components/Header/Header";
+import "../styles/login.css";
 
 export default function Login({ setLoggedIn }) {
   const [email, setEmail] = useState("");
@@ -16,15 +16,16 @@ export default function Login({ setLoggedIn }) {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log(userCredential);
+        setIsLoggedIn(true);
+        setLoggedIn(true);
       })
       .catch((error) => {
         console.log(error);
       });
-      setIsLoggedIn(true);
-      setLoggedIn(true);
   };
+  
   if (isLoggedIn) {
-    return <Card isLoggedIn={true} />;
+    return <Card isLoggedIn={true} loggedIn={true} />;
   }
   return (
     <div className="sign-in-container">

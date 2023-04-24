@@ -1,5 +1,5 @@
 import "../../styles/header.css";
-import logo from '../../styles/CardWave.png';
+import logo from "../../styles/CardWave.png";
 import { Link, useLocation } from "react-router-dom";
 import AuthDetails from "../../Pages/AuthDetails";
 

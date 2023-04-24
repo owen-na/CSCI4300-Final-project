@@ -1,8 +1,9 @@
 import "../../styles/card.css";
 import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import AuthDetails from "../../Pages/AuthDetails";
 
-export default function Card({ isLoggedIn }) {
+export default function Card({ isLoggedIn, handleLogout }) {
   const [editing, setEditing] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
   const fileInputRef = useRef(null);
@@ -62,6 +63,11 @@ export default function Card({ isLoggedIn }) {
     setEditing(false);
     navigate("/");
     sendData();
+    <AuthDetails handleLogout={handleLogoutClick} />
+  };
+
+  const handleLogoutClick = () => {
+    handleLogout();
   };
 
   const handleNameChange = (event) => {

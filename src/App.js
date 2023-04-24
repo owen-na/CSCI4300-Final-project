@@ -13,12 +13,15 @@ export default function App() {
 
   const handleLogout = () => {
     setIsLoggedIn(false);
-    navigate("/Pages/Login");
+  };
+
+  const handleLogin = () => {
+    setIsLoggedIn(true);
   };
 
   return (
     <>
-      <Header isLoggedIn={isLoggedIn} handleLogout={handleLogout} />
+      <Header isLoggedIn={isLoggedIn} handleLogout={handleLogout}  handleLogin={handleLogin}/>
       <Routes>
         <Route path="/Pages/Login" element={<Login setLoggedIn={setIsLoggedIn} />} />
         <Route path="/Pages/SignUp" element={<SignUp />} />

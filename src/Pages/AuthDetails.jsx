@@ -1,3 +1,4 @@
+
 // AuthDetails.jsx
 
 import { onAuthStateChanged, signOut } from "firebase/auth";
@@ -33,7 +34,7 @@ const AuthDetails = ({ handleLogout }) => {
       {authUser ? (
         <>
           <p>{`Signed In as ${authUser.email}`}</p>
-          <button onClick={userSignOut}>Log Out</button>
+          <button className="logoutBtn" onClick={userSignOut}>Log Out</button>
         </>
       ) : (
         <p>Signed Out</p>
