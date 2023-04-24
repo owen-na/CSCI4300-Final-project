@@ -6,6 +6,8 @@ export default function Card({ isLoggedIn }) {
   const [selectedImage, setSelectedImage] = useState(null); // For image
   const fileInputRef = useRef(null); // For image, get file.
   const [imageUrl, setImageUrl] = useState(null); // For image
+  const [name, setName] = useState("Name: "); // For name
+  const [description, setDescription] = useState("What's it about?"); // For description
 
   const sendData = async () => {
     try {
@@ -59,10 +61,24 @@ export default function Card({ isLoggedIn }) {
   }; /* Handle save button. 
   (Need to change this to save image even if we reload page.) */
 
+  const handleNameChange = (event) => {
+    setName(event.target.value);
+  }; // Handle name change
+
+  const handleDescriptionChange = (event) => {
+    setDescription(event.target.value);
+  }; // Handle description change
+
   return (
     <div className="parent">
       <div className="imageHolder">
-        <h2>Name holder</h2>
+        <div className="nameHolder">
+          {editing ? (
+            <input type="text" value={name} onChange={handleNameChange} />
+          ) : (
+            <h2>{name}</h2>
+          )}
+        </div>
         <div className="image">
           {imageUrl ? (
             <img src={imageUrl} alt="Selected" />
@@ -80,12 +96,17 @@ export default function Card({ isLoggedIn }) {
         </div>
       </div>
       <div className="stats">
-        <p>placeHolder</p>
-        <p>placeHolder</p>
-        <p>placeHolder</p>
-        <p>placeHolder</p>
-        <p>placeHolder</p>
-        <p>placeHolder</p>
+        <div className="placeHolder">
+          <textarea
+            className="descriptionInput"
+            value={description}
+            onChange={handleDescriptionChange}
+            rows="10"
+            cols="50"
+            maxLength="1000"
+            disabled={!editing}
+          />
+        </div>
         <div className="Edit_Btn">
           {isLoggedIn && !editing && (
             <button className="editBtn" onClick={handleEditClick}>

@@ -8,12 +8,12 @@ import arrow from "./assets/arrow.svg";
 import React, { useState } from 'react';
 
 export default function App() {
-  const [isloggedIn, setLoggedIn] = useState(false);
+  const [isloggedIn, setloggedIn] = useState(false);
 
   return (
     <>
       <Routes>
-        <Route path="/Pages/Login" element={<Login setLoggedIn={setLoggedIn} />} />
+        <Route path="/Pages/Login" element={<Login setLoggedIn={setloggedIn} />} />
         <Route path="/Pages/SignIn" element={<SignIn />} />
         <Route path="/" element={
           <>
@@ -23,7 +23,7 @@ export default function App() {
                 <img src={arrow} alt="Backarrow" className="barrow" />
               </button>
               <div className="horizontalScroll">
-                <Card isloggedIn={isloggedIn} />
+                <Card isLoggedIn={isloggedIn} />
               </div>
               <button type="button">
                 <img src={arrow} alt="arrow" className="farrow" />
