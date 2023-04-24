@@ -7,6 +7,24 @@ export default function Card({ isLoggedIn }) {
   const fileInputRef = useRef(null); // For image, get file.
   const [imageUrl, setImageUrl] = useState(null); // For image
 
+  const sendData = async () => {
+    try {
+      await fetch("http://localhost:8000/cardsdata", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: "foo",
+          description: "bar",
+          image: "foobar",
+        }),
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
   const handleEditClick = () => {
     if (isLoggedIn) {
       setEditing(true);
@@ -37,6 +55,7 @@ export default function Card({ isLoggedIn }) {
 
   const handleSaveClick = () => {
     setEditing(false);
+    sendData();
   }; /* Handle save button. 
   (Need to change this to save image even if we reload page.) */
 
@@ -78,10 +97,7 @@ export default function Card({ isLoggedIn }) {
               <button className="addBtn" onClick={handleAddClick}>
                 Add
               </button>
-              <button
-                className="deleteBtn"
-                onClick={handleDeleteClick}
-              >
+              <button className="deleteBtn" onClick={handleDeleteClick}>
                 Delete
               </button>
               <button className="saveBtn" onClick={handleSaveClick}>
