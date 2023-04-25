@@ -6,7 +6,7 @@ const Card = require("./models/cardModel");
 const app = express();
 
 app.use(express.json());
-const uri = `mongodb+srv://steventran:AldGH9yzYwP3rqOw@cluster0.oeg5zlf.mongodb.net/?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://steventran:testtestetse@cluster0.oeg5zlf.mongodb.net/?retryWrites=true&w=majority`;
 
 async function connect() {
   try {
@@ -30,3 +30,6 @@ connect();
 app.listen(8000, () => {
   console.log("Server started on port 8000");
 });
+
+
+// AldGH9yzYwP3rqOw
