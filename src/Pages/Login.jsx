@@ -18,6 +18,7 @@ export default function Login({ setLoggedIn }) {
         console.log(userCredential);
         setIsLoggedIn(true);
         setLoggedIn(true);
+        navigate("/");
       })
       .catch((error) => {
         console.log(error);

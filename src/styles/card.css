@@ -2,8 +2,14 @@
   width: 100%;
   height: 30vh;
   border: 2px solid black;
-  display: flex;
+  display: grid;
+  margin: auto; /* Center the parent horizontally */
   margin-bottom: 20px;
+}
+
+.holders {
+  width: 100%;
+  display: flex;
 }
 
 .imageHolder {
@@ -48,8 +54,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .descriptionInput {
@@ -62,12 +67,20 @@
   resize: none;
   outline: none;
   white-space: pre-wrap;
+  margin-bottom: 10px;
+  align-items: flex-end;
+}
+
+.Btn {
+  display: flex;
+  margin-right: 10%;
 }
 
 .editBtn,
 .addBtn,
 .deleteBtn,
 .saveBtn,
+.disabledBtn,
 button[type="submit"] {
   background-color: transparent;
   color: black;
@@ -84,7 +97,7 @@ button[type="submit"] {
   .parent {
     height: 50vh;
   }
-  
+
   .imageHolder {
     height: 50%;
   }
@@ -102,7 +115,7 @@ button[type="submit"] {
     width: 80vw;
     height: 50vh;
   }
-  
+
   .imageHolder {
     height: 50%;
   }

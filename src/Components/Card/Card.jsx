@@ -1,6 +1,5 @@
 import "../../styles/card.css";
 import React, { useState, useRef } from "react";
-import { useNavigate } from "react-router-dom";
 
 export default function Card({ isLoggedIn, handleLogout }) {
   const [editing, setEditing] = useState(false);
@@ -9,7 +8,6 @@ export default function Card({ isLoggedIn, handleLogout }) {
   const [imageUrl, setImageUrl] = useState(null);
   const [name, setName] = useState("Name: ");
   const [description, setDescription] = useState("What's it about?");
-  const navigate = useNavigate();
 
   const sendData = async (name, description, imageUrl) => {
     try {
@@ -73,43 +71,45 @@ export default function Card({ isLoggedIn, handleLogout }) {
 
   return (
     <div className="parent">
-      <div className="imageHolder">
-        <div className="nameHolder">
-          {editing ? (
-            <input type="text" value={name} onChange={handleNameChange} />
-          ) : (
-            <h2>{name}</h2>
-          )}
+      <div className="holders">
+        <div className="imageHolder">
+          <div className="nameHolder">
+            {editing ? (
+              <input type="text" value={name} onChange={handleNameChange} />
+            ) : (
+              <h2>{name}</h2>
+            )}
+          </div>
+          <div className="image">
+            {imageUrl ? (
+              <img src={imageUrl} alt="Selected" />
+            ) : (
+              <p>No image selected</p>
+            )}
+            <input
+              className="imgInput"
+              type="file"
+              accept="image/*"
+              onChange={handleImageChange}
+              ref={fileInputRef}
+              style={{ display: "none" }}
+            />
+          </div>
         </div>
-        <div className="image">
-          {imageUrl ? (
-            <img src={imageUrl} alt="Selected" />
-          ) : (
-            <p>No image selected</p>
-          )}
-          <input
-            className="imgInput"
-            type="file"
-            accept="image/*"
-            onChange={handleImageChange}
-            ref={fileInputRef}
-            style={{ display: "none" }}
-          />
+        <div className="stats">
+          <div className="placeHolder">
+            <textarea
+              className="descriptionInput"
+              value={description}
+              onChange={handleDescriptionChange}
+              rows="10"
+              cols="50"
+              maxLength="1000"
+              disabled={!editing}
+            />
+          </div>
         </div>
-      </div>
-      <div className="stats">
-        <div className="placeHolder">
-          <textarea
-            className="descriptionInput"
-            value={description}
-            onChange={handleDescriptionChange}
-            rows="10"
-            cols="50"
-            maxLength="1000"
-            disabled={!editing}
-          />
-        </div>
-        <div className="Edit_Btn">
+        <div className="Btn">
           {isLoggedIn && !editing && (
             <button className="editBtn" onClick={handleEditClick}>
               Edit
@@ -117,15 +117,23 @@ export default function Card({ isLoggedIn, handleLogout }) {
           )}
           {editing && (
             <>
-              <button className="addBtn" onClick={handleAddClick}>
-                Add
-              </button>
-              <button className="deleteBtn" onClick={handleDeleteClick}>
-                Delete
-              </button>
-              <button className="saveBtn" onClick={handleSaveClick}>
-                Save
-              </button>
+              {isLoggedIn ? (
+                <>
+                  <button className="addBtn" onClick={handleAddClick}>
+                    Add
+                  </button>
+                  <button className="deleteBtn" onClick={handleDeleteClick}>
+                    Delete
+                  </button>
+                  <button className="saveBtn" onClick={handleSaveClick}>
+                    Save
+                  </button>
+                </>
+              ) : (
+                <button className="disabledBtn" disabled>
+                  Please log in to edit
+                </button>
+              )}
             </>
           )}
         </div>
