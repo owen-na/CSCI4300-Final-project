@@ -7,6 +7,24 @@ import "./App.css";
 import arrow from "./assets/arrow.svg";
 import React, { useState } from "react";
 
+const DUMMY = [
+  {
+    name: "test1",
+    description: "first tester",
+    image: "funnyfirsttestimg"
+  },
+  {
+    name: "test2",
+    description: "steven's test",
+    image: "idk about here"
+  },
+  {
+    name: "finaltest",
+    description: "last test",
+    image: "finalimage"
+  }
+]
+
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
