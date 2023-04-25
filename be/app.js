@@ -16,7 +16,7 @@ async function connect() {
     console.log(error);
   }
 }
-app.post("/card", async (req, res) => {
+app.post("/cards", async (req, res) => {
   try {
     const card = await Card.create(req.body);
     res.status(200).json(card);
