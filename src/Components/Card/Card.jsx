@@ -60,7 +60,7 @@ export default function Card({ isLoggedIn, handleLogout }) {
 
   const handleSaveClick = () => {
     setEditing(false);
-    sendData();
+    sendData(name, description, imageUrl);
   };
 
   const handleNameChange = (event) => {
