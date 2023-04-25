@@ -52,7 +52,7 @@ export default function App() {
                   <img src={arrow} alt="Backarrow" className="barrow" />
                 </button>
                 <div className="horizontalScroll">
-                  <Card isLoggedIn={isLoggedIn} />
+                <Card isLoggedIn={isLoggedIn} handleLogout={handleLogout} />
                 </div>
                 <button type="button">
                   <img src={arrow} alt="arrow" className="farrow" />
