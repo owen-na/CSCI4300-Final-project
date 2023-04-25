@@ -3,14 +3,17 @@ const cardSchema = mongoose.Schema(
   {
     name: {
       type: String,
-      required: [true, "Please enter a card name."],
+      required: true,
+      // required: [true, "Please enter a card name."],
     },
     description: {
       type: String,
-      required: [true, "Please enter a card description"],
+      required: true,
+      // required: [true, "Please enter a card description"],
     },
     image: {
       type: String,
+      required: true,
     },
   },
   {
