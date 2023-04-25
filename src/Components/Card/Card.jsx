@@ -1,7 +1,7 @@
 import "../../styles/card.css";
 import React, { useState, useRef } from "react";
 
-export default function Card({ isLoggedIn, handleLogout }) {
+export default function Card(props, { isLoggedIn, handleLogout }) {
   const [editing, setEditing] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
   const fileInputRef = useRef(null);
@@ -75,7 +75,11 @@ export default function Card({ isLoggedIn, handleLogout }) {
         <div className="imageHolder">
           <div className="nameHolder">
             {editing ? (
-              <input type="text" value={name} onChange={handleNameChange} />
+              <input
+                type="text"
+                value={props.name}
+                onChange={handleNameChange}
+              />
             ) : (
               <h2>{name}</h2>
             )}
@@ -100,7 +104,7 @@ export default function Card({ isLoggedIn, handleLogout }) {
           <div className="placeHolder">
             <textarea
               className="descriptionInput"
-              value={description}
+              value={props.description}
               onChange={handleDescriptionChange}
               rows="10"
               cols="50"

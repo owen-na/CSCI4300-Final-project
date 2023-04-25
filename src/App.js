@@ -7,7 +7,7 @@ import "./App.css";
 import arrow from "./assets/arrow.svg";
 import React, { useState } from "react";
 
-const DUMMY = [
+const carddum = [
   {
     name: "test1",
     description: "first tester",
@@ -52,7 +52,7 @@ export default function App() {
                   <img src={arrow} alt="Backarrow" className="barrow" />
                 </button>
                 <div className="horizontalScroll">
-                <Card isLoggedIn={isLoggedIn} handleLogout={handleLogout} />
+                <Card cardlist={carddum} isLoggedIn={isLoggedIn} handleLogout={handleLogout} />
                 </div>
                 <button type="button">
                   <img src={arrow} alt="arrow" className="farrow" />

@@ -8,6 +8,7 @@ const app = express();
 const bodyParser = require("body-parser");
 
 // app.use(express.json()); need this line??
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 const uri = `mongodb+srv://steventran:AldGH9yzYwP3rqOw@cluster0.oeg5zlf.mongodb.net/?retryWrites=true&w=majority`;
 
