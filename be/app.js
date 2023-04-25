@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const Card = require("./models/cardModel");
 const app = express();
 
+app.use(express.json());
 const uri = `mongodb+srv://steventran:AldGH9yzYwP3rqOw@cluster0.oeg5zlf.mongodb.net/?retryWrites=true&w=majority`;
 
 async function connect() {
@@ -21,6 +22,7 @@ app.post("/cards", async (req, res) => {
     const card = await Card.create(req.body);
     res.status(200).json(card);
   } catch (error) {
+    console.log(req.body);
     res.status(500).json({ message: error.message });
   }
 });
