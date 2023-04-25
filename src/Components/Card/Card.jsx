@@ -11,9 +11,9 @@ export default function Card({ isLoggedIn, handleLogout }) {
   const [description, setDescription] = useState("What's it about?");
   const navigate = useNavigate();
 
-  const sendData = async () => {
+  const sendData = async (name, description, imageUrl) => {
     try {
-      await fetch("/api/cardsdata", {
+      await fetch("/api/cards", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -62,7 +62,6 @@ export default function Card({ isLoggedIn, handleLogout }) {
     setEditing(false);
     sendData();
   };
-
 
   const handleNameChange = (event) => {
     setName(event.target.value);
